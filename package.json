@@ -1,0 +1,45 @@
+{
+  "name": "did-you-mean",
+  "version": "0.0.1",
+  "description": "Fuzzy match a command from a list (typo-safety)",
+  "dependencies": {
+    "levenshtein": "*",
+    "underscore": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inca/did-you-mean.git"
+  },
+  "keywords": [
+    "typo",
+    "match",
+    "fuzzy",
+    "list",
+    "array",
+    "command",
+    "search",
+    "index"
+  ],
+  "author": {
+    "name": "Boris Okunskiy"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inca/did-you-mean/issues"
+  },
+  "homepage": "https://github.com/inca/did-you-mean",
+  "gitHead": "69d5b7b943d68cba9c945a99b61a515d21ef6d56",
+  "readme": "# Did You Mean ...\r\n\r\nFuzzy match a word from your list of commands or keywords in Node.js to provide\r\na friendly typo-safe human prompt.\r\n\r\nYou can use it in:\r\n\r\n  * your CLI\r\n  * a web application\r\n  * URLs\r\n  * etc.\r\n\r\n## Installation\r\n\r\n```bash\r\n$ npm install did-you-mean\r\n```\r\n\r\n## Usage\r\n\r\n```js\r\nvar Matcher = require('did-you-mean');\r\n\r\n// Create a matcher with a list of values\r\nvar m = new Matcher('init install update upgrade');\r\n\r\n// Get the closest match\r\nm.get('udpate');   // 'update'\r\n\r\n// Set the threshold (the maximum Levenshtein distance)\r\nm.setThreshold(3);\r\n\r\n// List all matches\r\nm.list('udpate');    // [ { value: 'update', distance: 2 }, { value: 'upgrade', distance: 3 } ]\r\n\r\n// Set ignore case\r\nm.ignoreCase();\r\n\r\n// Set match case\r\nm.matchCase();\r\n\r\n// Add more values\r\nm.add('merge', 'checkout', 'commit');\r\n```\r\n",
+  "readmeFilename": "README.md",
+  "_id": "did-you-mean@0.0.1",
+  "_shasum": "9a773a6188378efa37835ad6f1073c87dc0a226b",
+  "_from": "git+https://github.com/iFgR/did-you-mean.git",
+  "_resolved": "git+https://github.com/iFgR/did-you-mean.git#69d5b7b943d68cba9c945a99b61a515d21ef6d56"
+}
